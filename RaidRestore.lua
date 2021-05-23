@@ -122,7 +122,7 @@ function GetRaidInfo(pRaid)
 	for nIndex = 1, nMembers, 1 do		
 		strName, nRank, nGroup, nLevel, strClass = GetRaidRosterInfo(nIndex);
 		
-		if (strName ~= nil) then
+		if (strName ~= nil and strClass ~= nil) then
 			nCounts[nGroup] = nCounts[nGroup] + 1;
 			pRaid[nGroup][nCounts[nGroup]][RR_NAME] = string.lower(strName);
 			pRaid[nGroup][nCounts[nGroup]][RR_CLASS] = string.lower(strClass);
